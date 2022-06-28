@@ -692,6 +692,14 @@ Tab:AddButton({
             [1] = "ultraluck"
         }
         game:GetService("ReplicatedStorage").Functions.RedeemCode:InvokeServer(unpack(args))
+        local args = {
+            [1] = "megaluck"
+        }
+        game:GetService("ReplicatedStorage").Functions.RedeemCode:InvokeServer(unpack(args))
+        local args = {
+            [1] = "factory"
+        }
+        game:GetService("ReplicatedStorage").Functions.RedeemCode:InvokeServer(unpack(args))
 	end
 })
 
