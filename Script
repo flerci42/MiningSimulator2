@@ -595,6 +595,64 @@ Tab:AddToggle({
 })
 
 local Section = Tab:AddSection({
+	Name = "Open Frames"
+})
+
+local selectedFrame
+Tab:AddDropdown({
+    Name = "Choose Frame",
+    Default = "1",
+    Options = {"Rebirth Shop", "The Forge", "World Map", "Factory", "Gem Enchant"},
+    Callback = function(v)
+        selectedFrame = v
+    end
+})
+
+Tab:AddButton({
+    Name = "Open Frame",
+    Default = false,
+    Callback = function(v)
+        if selectedFrame == "Rebirth Shop" then
+            game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.RebirthShop.Visible = true
+        end
+        if selectedFrame == "The Forge" then
+            game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.Forge.Visible = true
+        end
+        if selectedFrame == "World Map" then
+            game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.WorldMap.Visible = true
+        end
+        if selectedFrame == "Factory" then
+            game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.Factory.Visible = true
+        end
+        if selectedFrame == "Gem Enchant" then
+            game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.GemEnchant.Visible = true
+        end
+    end
+})
+
+Tab:AddButton({
+    Name = "Close Frame",
+    Default = false,
+    Callback = function(v)
+        if selectedFrame == "Rebirth Shop" then
+            game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.RebirthShop.Visible = false
+        end
+        if selectedFrame == "The Forge" then
+            game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.Forge.Visible = false
+        end
+        if selectedFrame == "World Map" then
+            game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.WorldMap.Visible = false
+        end
+        if selectedFrame == "Factory" then
+            game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.Factory.Visible = false
+        end
+        if selectedFrame == "Gem Enchant" then
+            game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.GemEnchant.Visible = false
+        end
+    end
+})
+
+local Section = Tab:AddSection({
 	Name = "In-Game"
 })
 
